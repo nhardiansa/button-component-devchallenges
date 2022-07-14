@@ -1,25 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
+import Home from './pages/Home';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <HelmetProvider>
+        <Helmet>
+          {/* Fonts */}
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin='true' />
+          <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Noto+Sans:wght@500;700&family=Poppins:wght@600&family=Ubuntu+Mono&display=swap" rel="stylesheet" />
+
+          {/* Icons */}
+          <link rel="icon" href="./assets/images/devchallenges.png" />
+
+          <title>Button Component</title>
+        </Helmet>
+
+        <Home />
+
+      </HelmetProvider>
+    </>
   );
 }
 
